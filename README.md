@@ -1,25 +1,11 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+A Simple chat bot, that helps setting up appointments with hair stylists.
 
-Things you may want to cover:
+# Tech Stack
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-# scheduler
+- Ruby on Rails - 5.0
+- MySQL
+- Watson Conversation API
+- Watson Cloud Functions - Python run time
+- Twilio - For messaging
