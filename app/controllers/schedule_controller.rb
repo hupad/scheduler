@@ -6,11 +6,16 @@ class ScheduleController < BaseController
 	end
 
 	def create
+		
+		unless check_required_fields permit_params
+			raise MissingParamsException.new("From and To time are required parameters!!!")
+		end
+			
 		@schedule = @stylist.schedules.build(permit_params)
 		if @schedule.save
 			render status: :ok, json: @schedule
 		else
-			render status: :bad_request, json: {errors: @schedule.errors.full_messages}
+			render status: :bad_request, json: {error: @schedule.errors.full_messages}
 		end
 	end
 
@@ -22,5 +27,9 @@ class ScheduleController < BaseController
 
 	def permit_params
 		params.require(:schedule).permit(:from_time, :to_time)
+	end
+
+	def check_required_fields params
+		params[:first_time] && params[:to_time]
 	end
 end

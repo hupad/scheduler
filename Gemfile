@@ -21,6 +21,13 @@ gem 'delayed_job_active_record'
 group :development, :test do
   gem 'byebug', platform: :mri
   gem 'awesome_print'
+  gem 'rspec-rails'
+  gem 'factory_bot_rails'
+  gem 'spring-commands-rspec'
+end
+
+group :test do
+  gem 'capybara'
 end
 
 group :development do
